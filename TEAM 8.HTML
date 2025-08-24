@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Area of a Triangle</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 20px;
+    }
+    input {
+      margin: 5px;
+      padding: 8px;
+    }
+    button {
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Triangle Area Calculator</h2>
+
+  <label>Base:</label>
+  <input type="number" id="base" placeholder="Enter base"><br>
+
+  <label>Height:</label>
+  <input type="number" id="height" placeholder="Enter height"><br>
+
+  <button onclick="calculateArea()">Calculate Area</button>
+
+  <h3 id="result"></h3>
+
+  <script>
+    function calculateArea() {
+      const base = parseFloat(document.getElementById('base').value);
+      const height = parseFloat(document.getElementById('height').value);
+      if (isNaN(base) || isNaN(height)) {
+        document.getElementById('result').innerText = "Please enter valid numbers.";
+        return;
+      }
+      const area = 0.5 * base * height;
+      document.getElementById('result').innerText = "Area of the triangle is: " + area;
+    }
+  </script>
+
+</body>
+</html>
